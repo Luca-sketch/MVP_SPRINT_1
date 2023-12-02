@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Logistics WMS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div id="back_icon">
+            <img src="https://github.com/Luca-sketch/MVP_SPRINT_1/blob/main/icon_back.png?raw=true" alt="Voltar" style="width: 35px; height: 35px" onclick="voltar_tela()">
+        </div>
+        <div class="Head-titulo">
+            <H2>Next Logistics WMS</H2>
+        </div>
+        <div id="usuario_logado">
+            <h3>lucas</h3>
+        </div>
+    </header>
+    <!-- Tela Inicial -->
+    <div id="tela_login">
+        <div id="warehouse-image"><img src="https://github.com/Luca-sketch/MVP_SPRINT_1/blob/main/background-image.jpg?raw=true" alt="Warehouse"></div>
+        <div id="formulario_inicial">
+            <!-- Seção para iniciar a plataforma -->
+            <div class="login">
+                <div class="login-form">
+                    <h4>Login</h4>
+                    <label><b>Usuário</b></label>
+                    <input type="text" id="usuario" placeholder="Digite o usuário" required>
+                    <label><b>Senha</b></label>
+                    <input type="password" id="senha" placeholder="Digite a senha" required>
+                    <button onclick="tela_selecionar(event)" type="submit">Entrar</button>
+                    <p>Não tem cadastro? <a href="" onclick="FormularioCadastro(event)">Clique aqui</a></p>
+                    <p>Quer mudar a senha? <a href="" onclick="FormularioNovaSenha(event)">Clique aqui</a></p>
+                </div>
+            </div>
+            <!-- Seção caso não tenha usuario para cadastrar -->
+            <div class="cadastro">
+                <div class="login-form">
+                    <h4>Cadastro</h4>
+                    <label><b>Usuário</b></label>
+                    <input type="text" id="new_usuario" placeholder="Digite o usuário" required>
+                    <label><b>Senha</b></label>
+                    <input type="password" id="new_senha" placeholder="Digite a senha" required>
+                    <button onclick="tela_selecionar(event)" type="submit">Enviar/ Entrar</button>
+                    <p>Já tem cadastro? <a href="" onclick="FormularioLogin(event)">Voltar</a></p>
+                </div>
+            </div>
+            <!-- Seção caso queira cadastrar nova senha -->
+            <div class="nova_senha">
+                <div class="login-form">
+                    <h4>Nova Senha</h4>
+                    <label><b>Usuário</b></label>
+                    <input type="text" id="new_usuario" placeholder="Digite o usuário" required>
+                    <label><b>Senha</b></label>
+                    <input type="password" id="new_senha" placeholder="Digite a senha" required>
+                    <label><b> Nova Senha</b></label>
+                    <input type="password" id="new_senha" placeholder="Digite a senha" required>
+                    <button onclick="tela_selecionar(event)" type="submit">Enviar/ Entrar</button>
+                    <p>Mudou de ideia? <a href="" onclick="FormularioLogin(event)">Voltar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Seção escolha de opção -->
+    <div id="tela_selecionar">
+        <div id="background-image"></div>
+        <div class="escolha-form">
+            <button onclick="tela_novo(event)">Novo</button>
+            <button onclick="tela_historico(event)">Histórico</button>
+        </div>
+    </div>
+    <!-- Seção novo -->
+    <div id="tela_novo">
+        <div id="background-image"></div>
+        <div class="login">
+            <div class="login-form">
+                <label><b>Material</b></label>
+                <input type="text" id="new_material" placeholder="Digite o usuário" required>
+                <label><b>Quantidade</b></label>
+                <input type="number" id="new_quantidade" placeholder="Digite o usuário" required>
+                <label><b>Sku</b></label>
+                <input type="text" id="new_sku" placeholder="Digite o usuário" required>
+                <label><b>Rua</b></label>
+                <input type="text" id="new_rua" placeholder="Digite o usuário" required>
+                <label><b>Posição</b></label>
+                <input type="text" id="new_posicao" placeholder="Digite o usuário" required>
+                <button onclick="enviar(event)" type="submit">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Seção Historico -->
+    <div id="tela_historico">
+        <div id="background-image"></div>
+        <div class="tabela_form">
+            <div class="login-form">
+                <div id = "filtro">
+                    <label><b><strong>Rua:</strong></b></label>
+                    <select id="filtroMaterial">
+                        <option value="material1">Material 1</option>
+                        <option value="material2">Material 2</option>
+                    </select>
+                    <label><b></b><strong>Posição:</strong></b></label>
+                    <select id="filtroSku">
+                        <option value="sku1">Sku 1</option>
+                        <option value="sku2">Sku 2</option>
+                    </select>
+                </div>
+                <button onclick="preencherTabela(event)" type="submit">Enviar</button>
+                <table id="tabela">
+                    <tr>
+                        <th>Material</th>
+                        <th>Quantidade</th>
+                        <th>Sku</th>
+                        <th>Rua</th>
+                        <th>Posição</th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <h5>lucas@2023</h5>
+        </div>
+    </footer>
+</body>
+</html>
